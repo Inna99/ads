@@ -6,19 +6,24 @@ from django.utils.encoding import smart_text as smart_unicode
 from django.utils.translation import ugettext_lazy as _
 
 
-class Todo(models.Model):
+class Ad(models.Model):
 
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
-    )
-    name = models.CharField(_('Name'), max_length=255)
-    done = models.BooleanField(_('Done'), default=False)
+    # user = models.ForeignKey(
+    #     settings.AUTH_USER_MODEL,
+    #     on_delete=models.CASCADE
+    # )
+    title = models.CharField(_('Title'), max_length=255)
+    body = models.CharField(_('Body'), max_length=1000)
+    actual = models.BooleanField(_('Actual'), default=False)
     date_created = models.DateTimeField(_('Date Created'), auto_now_add=True)
+    last_modified = models.DateField(_('Last Modified'), auto_now=True)
 
     class Meta:
-        verbose_name = _('Todo')
-        verbose_name_plural = _('Todos')
+        verbose_name = _('Ad')
+        verbose_name_plural = _('Ads')
 
     def __unicode__(self):
-        return smart_unicode(self.name)
+        return smart_unicode(self.title)
+
+    def __str___(self):
+        return self.title
