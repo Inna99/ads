@@ -4,6 +4,7 @@ db.sqlite3
 .idea
 ads/migrations
 users/migrations
+tests/tests/test_pizza.py
 
 # Django #
 *.log
