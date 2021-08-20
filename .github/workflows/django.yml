@@ -35,5 +35,7 @@ jobs:
         echo runing lenter
     - name: Run Tests
       run: |
-        pytest
+        python manage.py makemigrations
+        python manage.py migrate
+        pytest -c pytest.ini
     
