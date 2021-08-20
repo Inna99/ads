@@ -7,7 +7,6 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Ad(models.Model):
-
     # user = models.ForeignKey(
     #     settings.AUTH_USER_MODEL,
     #     on_delete=models.CASCADE
