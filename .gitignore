@@ -5,6 +5,7 @@ db.sqlite3
 ads/migrations
 users/migrations
 tests/tests/test_pizza.py
+clean.sh
 
 # Django #
 *.log
