@@ -10,7 +10,7 @@ def test_ad_create_method_not_allowed(client):
     assert response.json() == {"detail": 'Method "GET" not allowed.'}
 
 
-def test_ad_delete(client):
+def test_ad_noting_delete(client):
     response = client.delete("http://127.0.0.1:8000/api/v1/ads/delete/1/")
     # assert response.status_code == 405
     # assert response.json() == {"detail": 'Method "GET" not allowed.'}
@@ -18,7 +18,7 @@ def test_ad_delete(client):
     assert response.json() == {'detail': 'Not found.'}
 
 
-def test_ad_create_delete(client):
+def test_ad_create_then_delete(client):
     response = client.post(
         "http://127.0.0.1:8000/api/v1/ads/create/",
         data={'title': 'title1', 'body': 'add_body'}
